@@ -34,19 +34,19 @@
             <li><a href="/">Home</a></li>
             <li><a href="#">Games</a>
               <ul>
-                <li><a href="{% url 'convention:show_schedule' %}">Schedule</a></li>
-                <li><a href="{% url 'convention:games_list' %}">Description</a></li>
+                <!--<li><a href="{% url 'convention:show_schedule' %}">Schedule</a></li>
+                <li><a href="{% url 'convention:games_list' %}">Description</a></li>-->
                 <li><a href="{% url 'convention:user_profile' %}">Edit Submissions</a></li>
                 {% edit_schedule_link request.user %}
               </ul>
             </li>
-            <li><a href="#">Site</a>
+            <!--<li><a href="#">Site</a>
               <ul>
                 <li><a href="{% url 'page:display' 'site/directions' %}">Directions</a></li>
                 <li><a href="{% url 'page:display' 'site/rules' %}">Rules</a></li>
                 <li><a href="{% url 'page:display' 'site/amenities' %}">Amenities</a></li>
               </ul>
-            </li>
+            </li>-->
             {% if user.is_authenticated %}
             <li><a href="#">Account</a>
               <ul>

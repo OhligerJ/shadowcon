@@ -289,3 +289,9 @@ footer a {
   filter: FlipH;
   -ms-filter: "FlipH";
 }
+
+/* hide for initial launch */
+
+aside li {
+  visibility: hidden;
+}

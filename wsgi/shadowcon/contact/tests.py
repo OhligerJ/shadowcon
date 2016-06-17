@@ -80,7 +80,7 @@ class ContactTest(ShadowConTestCase):
             self.test_data['email'],
             self.test_data['message']))
         self.assertEquals(email.to, ['staff@na.com', 'admin@na.com'])
-        self.assertEquals(email.from_email, 'postmaster@mg.shadowcon.net')
+        self.assertEquals(email.from_email, self.from_address)
         self.assertEquals(email.subject, 'ShadowCon [Something Broke]: %s' % self.test_data['summary'])
 
     def run_unclean_test(self, key):
@@ -96,7 +96,7 @@ class ContactTest(ShadowConTestCase):
             self.test_data['email'],
             self.test_data['message']))
         self.assertEquals(email.to, ['staff@na.com', 'admin@na.com'])
-        self.assertEquals(email.from_email, 'postmaster@mg.shadowcon.net')
+        self.assertEquals(email.from_email, self.from_address)
         self.assertEquals(email.subject, 'ShadowCon [Something Broke]: %s' % self.test_data['summary'])
 
     def test_cleaned_name(self):
@@ -131,7 +131,7 @@ class ContactTest(ShadowConTestCase):
             test_data['email'],
             test_data['message']))
         self.assertEquals(email.to, ['user@na.com'])
-        self.assertEquals(email.from_email, "postmaster@mg.shadowcon.net")
+        self.assertEquals(email.from_email, self.from_address)
         self.assertEquals(email.subject, 'ShadowCon [Admins make things better]: A summary goes here')
 
     def test_util(self):
@@ -144,7 +144,7 @@ class ContactTest(ShadowConTestCase):
 
         self.assertEquals(email.body, message)
         self.assertEquals(email.to, ['user@na.com'])
-        self.assertEquals(email.from_email, 'postmaster@mg.shadowcon.net')
+        self.assertEquals(email.from_email, self.from_address)
         self.assertEquals(email.subject, 'ShadowCon [%s]: %s' % (subject_source, subject_details))
 
     def test_util_alternate(self):
@@ -157,7 +157,7 @@ class ContactTest(ShadowConTestCase):
 
         self.assertEquals(email.body, message)
         self.assertEquals(email.to, ['staff@na.com', 'admin@na.com'])
-        self.assertEquals(email.from_email, 'postmaster@mg.shadowcon.net')
+        self.assertEquals(email.from_email, self.from_address)
         self.assertEquals(email.subject, 'ShadowCon [%s]: %s' % (subject_source, subject_details))
 
     def test_util_no_list(self):

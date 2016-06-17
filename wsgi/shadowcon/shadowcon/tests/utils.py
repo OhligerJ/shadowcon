@@ -5,7 +5,7 @@ import re
 
 
 class ShadowConTestCase(TestCase):
-    fixtures = ['auth', 'initial', 'games']
+    fixtures = ['auth', 'initial', 'games', 'test']
 
     def get_section(self, response, section, section_terminator=None):
         if section_terminator is None:

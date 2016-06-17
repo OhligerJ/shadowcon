@@ -20,6 +20,9 @@ def mail_list(subject_source, subject_details, message, email_list=None, list_na
     subject = "ShadowCon [%s]: %s" % (subject_source, subject_details)
     from_email = "ShadowCon Website <postmaster@mg.shadowcon.net>"
 
+    if reply_to:
+        reply_to = [from_email, reply_to]
+
     EmailMessage(subject=subject,
                  body=message,
                  from_email=from_email,
